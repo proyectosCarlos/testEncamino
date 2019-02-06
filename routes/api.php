@@ -13,9 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
 
 Route::group(['middleware' => 'cors'], function(){
     Route::get('rutas', 'RutasController@obtenerRutas')->name('getRutas');
@@ -25,3 +23,5 @@ Route::group(['middleware' => 'cors'], function(){
     Route::post('rutas/op', 'OpinionesController@agregarOp')->name('addOp');
 
 });
+
+
